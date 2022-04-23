@@ -1,2 +1,2 @@
-# project-boilerplate
-My basic setup for web applications 
+# rayal-park
+Hotel website. Portfolio project.
