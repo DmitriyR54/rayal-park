@@ -49,6 +49,7 @@
         "xml-loader": "^1.2.1"
     },
     "dependencies": {
+        "hamburgers": "^1.2.1",
         "lodash": "^4.17.21"
     }
 }

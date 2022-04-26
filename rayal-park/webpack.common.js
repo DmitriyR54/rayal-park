@@ -49,6 +49,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
+            Src: path.resolve(__dirname, 'src'),
             Components: path.resolve(__dirname, 'src/components'),
             Sections: path.resolve(__dirname, 'src/sections'),
         },

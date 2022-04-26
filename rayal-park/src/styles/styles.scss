@@ -1,18 +1,22 @@
-$container-padding: 15px;
+@import './variables.scss';
+@import './components.scss';
+@import './normalize.css';
 
-// body section
-body{
-    background-image: url('../img/body-background.jpg');
-    background-size: contain;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    list-style: none;
 }
 
-.container {
-    padding: $container-padding;
-}
-.title{
+html,
+body {
     font-family: 'Roboto', sans-serif;
-    font-size: 36px;
 }
-.subtitle{
-    font-size: 20px;
+
+img {
+    display: inline-block;
+    max-width: 100%;
 }
