@@ -13,6 +13,10 @@
     font-size: 32px;
     font-weight: 500;
     line-height: 140%;
+
+    .title-highlight {
+        color: $blue;
+    }
 }
 /* text above the title */
 .suptitle {
@@ -22,6 +26,7 @@
     font-weight: 500;
     line-height: 150%;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 /* text under the title */
 .subtitle {
@@ -42,7 +47,7 @@
     border-radius: 5px;
     outline: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 160%;
     transition: $transition;
@@ -99,6 +104,9 @@
 @media (max-width: $smallScreen) {
     .container {
         padding: 0 20px;
+    }
+    .title{
+        line-height: 120%;
     }
     .button {
         padding: 8px 18px;

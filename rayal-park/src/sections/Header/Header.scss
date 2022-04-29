@@ -1,18 +1,17 @@
 @import '../../styles/variables.scss';
 
 .header {
-    border: 1px solid #000;
+    margin-top: 30px;
     background-color: transparent;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 10;
 }
 .header__inner {
     display: flex;
     align-items: center;
-    border: 1px solid #000;
 }
 
 /* NAVIGATION */
@@ -185,6 +184,9 @@
 }
 /* mobile phone */
 @media (max-width: $phone) {
+    .header{
+        margin-top: 15px;
+    }
     /* 'Book now' button */
     #header__button {
         margin-right: 5px;

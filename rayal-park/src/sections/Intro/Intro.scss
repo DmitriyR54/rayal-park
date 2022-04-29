@@ -1,0 +1,218 @@
+@import '../../styles/variables.scss';
+
+.intro {
+    background-image: url('./img/intro-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.intro__inner {
+    padding-top: 215px;
+}
+/* TITLE */
+.intro__title {
+    max-width: 40%;
+    font-size: 56px;
+}
+.intro__subtitle {
+    max-width: 30%;
+    margin-top: 25px;
+}
+
+#intro__read-more {
+    margin-top: 30px;
+}
+
+/* FIND A ROOM SECTION */
+.intro__findroom {
+    width: fit-content;
+    position: relative;
+    bottom: -60px;
+    left: -35px;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(235, 235, 235, 0.75);
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+/* if backdrop-filter is supported background will be blurred */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .intro__findroom::before {
+        backdrop-filter: blur(70px);
+    }
+}
+.intro__findroom-wrapper {
+    display: flex;
+    padding: 25px 50px;
+    position: relative;
+    z-index: 2;
+}
+.intro__findroom-section {
+    padding: 0 30px;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 2px;
+        height: 34px;
+        background-color: #d6dbdf;
+        transform: translateY(-50%);
+        position: absolute;
+        top: 50%;
+        right: -1px;
+        z-index: 1;
+    }
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:nth-child(3) {
+        margin-right: 60px;
+        padding-right: 0;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+.intro__findroom-section-title {
+    display: block;
+    margin-bottom: 10px;
+    color: $black;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 160%;
+}
+.intro__findroom-section-label {
+    color: $gray;
+    line-height: 160%;
+    cursor: pointer;
+}
+.intro__findroom-section-date {
+    opacity: 0;
+    visibility: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.intro__findroom-person {
+    display: flex;
+}
+.intro__select {
+    color: $gray;
+    background-color: transparent;
+    line-height: 160%;
+    cursor: pointer;
+    appearance: none;
+
+    &:first-child {
+        margin-right: 5px;
+    }
+}
+
+/* DEVICE ADAPTATION */
+@media (max-width: $smallScreen) {
+    .intro__title {
+        max-width: 60%;
+    }
+    .intro__subtitle {
+        max-width: 50%;
+        margin-top: 15px;
+    }
+    .intro__findroom {
+        left: 0;
+    }
+}
+/* tablet */
+@media (max-width: $tablet) {
+    .intro__inner {
+        padding-top: 150px;
+    }
+    .intro__title {
+        max-width: 90%;
+    }
+    .intro__subtitle {
+        max-width: 75%;
+        margin-top: 10px;
+    }
+    #intro__read-more {
+        margin-top: 20px;
+    }
+    /* FIND A ROOM SECTION */
+    .intro__findroom {
+        margin: 0 auto;
+        bottom: -40px;
+    }
+    .intro__findroom-wrapper {
+        padding: 15px 25px;
+    }
+    .intro__findroom-section {
+        padding: 0 15px;
+
+        &:nth-child(3) {
+            margin-right: 20px;
+        }
+    }
+}
+/* mobile phone */
+@media (max-width: $phone) {
+    .intro {
+        background-position: top;
+    }
+    .intro__inner {
+        padding-top: 125px;
+    }
+    .intro__title {
+        max-width: 100%;
+        font-size: 48px;
+    }
+    .intro__subtitle {
+        max-width: 90%;
+    }
+    /* FIND A ROOM SECTION */
+    .intro__findroom{
+        width: 100%;
+    }
+    .intro__findroom-wrapper {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .intro__findroom-section {
+        width: 33.3333%;
+        padding: 0 5px;
+
+        &::after {
+            right: 10px;
+        }
+
+        &:nth-child(3) {
+            margin-right: 0;
+        }
+    }
+    .intro__findroom-section-title {
+        margin-bottom: 5px;
+    }
+    .intro__findroom-person {
+        display: flex;
+        flex-direction: column;
+    }
+    .intro__select {
+        &:first-child {
+            margin-right: 0;
+        }
+    }
+    #intro__findroom-btn {
+        width: 60%;
+        margin: 10px auto 0;
+    }
+}
