@@ -8,63 +8,67 @@ const IntroSection = (container) => {
 };
 
 window.onload = () => {
-    const checkinDateSection = document.querySelector('[data-datepicker="checkin"]');
-    const checkoutDateSection = document.querySelector('[data-datepicker="checkout"]');
+    const formatDate = (date) => {
+        const day = date.getDate();
+        const month = date.toLocaleString('eng', { month: 'short' });
+        const year = date.getFullYear();
 
-    const pickDate = (section, assignment) => {
-        const dateLabel = section.querySelector('label');
-        const dateInput = section.querySelector('input');
-
-        const getDate = (date) => {
-            const day = date.getDate();
-            const month = date.toLocaleString('eng', { month: 'short' });
-            const year = date.getFullYear();
-
-            return `${day} ${month} ${year}`;
-        };
-
-        let checkinDate = new Date();
-        let checkoutDate = new Date();
-
-        if (assignment === 'check-in') {
-            checkinDate.setDate(checkinDate.getDate() + 1);
-            dateLabel.innerHTML = getDate(checkinDate);
-
-            dateLabel.onclick = () => {
-                dateInput.showPicker();
-                dateInput.oninput = () => {
-                    const value = new Date(dateInput.value);
-                    if (value < checkoutDate) {
-                        checkinDate = value;
-                        dateLabel.innerHTML = getDate(checkinDate);
-                    } else {
-                        dateLabel.innerHTML = 'Pick a date';
-                        checkinDate = null;
-                    }
-                };
-            };
-        } else if (assignment === 'check-out') {
-            checkoutDate.setDate(checkoutDate.getDate() + 3);
-            dateLabel.innerHTML = getDate(checkoutDate);
-
-            dateLabel.onclick = () => {
-                dateInput.showPicker();
-                dateInput.oninput = () => {
-                    const value = new Date(dateInput.value);
-                    if (value >= checkinDate) {
-                        checkoutDate = value;
-                        dateLabel.innerHTML = getDate(checkoutDate);
-                    } else {
-                        dateLabel.innerHTML = 'Pick a date';
-                        checkoutDate = null;
-                    }
-                };
-            };
-        }
+        return `${day} ${month} ${year}`;
     };
 
-    pickDate(checkinDateSection, 'check-in');
-    pickDate(checkoutDateSection, 'check-out');
+    let checkInDate = new Date();
+    checkInDate.setDate(checkInDate.getDate() + 1);
+    checkInDate.setHours(3, 0, 0, 0);
+
+    let checkOutDate = new Date();
+    checkOutDate.setDate(checkOutDate.getDate() + 3);
+    checkOutDate.setHours(3, 0, 0, 0);
+
+    const pickCheckInDate = (label, input) => {
+        label.innerHTML = formatDate(checkInDate);
+
+        label.onclick = () => {
+            if (typeof input.showPicker === 'function') {
+                input.showPicker();
+            }
+            input.onchange = () => {
+                let value = new Date(input.value);
+                if (value <= checkOutDate) {
+                    checkInDate = value;
+                    label.innerHTML = formatDate(checkInDate);
+                } else {
+                    label.innerHTML = 'Pick a date';
+                }
+            };
+        };
+    };
+
+    const pickCheckOutDate = (label, input) => {
+        label.innerHTML = formatDate(checkOutDate);
+
+        label.onclick = () => {
+            if (typeof input.showPicker === 'function') {
+                input.showPicker();
+            }
+            input.onchange = () => {
+                let value = new Date(input.value);
+                if (value >= checkInDate) {
+                    checkOutDate = value;
+                    label.innerHTML = formatDate(checkOutDate);
+                } else {
+                    label.innerHTML = 'Pick a date';
+                }
+            };
+        };
+    };
+
+    const checkInDateLabel = document.querySelectorAll('.intro__findroom-section-label')[0];
+    const checkInDateInput = document.querySelectorAll('.intro__findroom-section-date')[0];
+    pickCheckInDate(checkInDateLabel, checkInDateInput);
+
+    const checkOutDateLabel = document.querySelectorAll('.intro__findroom-section-label')[1];
+    const checkOutDateInput = document.querySelectorAll('.intro__findroom-section-date')[1];
+    pickCheckOutDate(checkOutDateLabel, checkOutDateInput);
 
     const submitFindRoom = (event, checkin, checkout) => {
         event.preventDefault();
@@ -76,10 +80,8 @@ window.onload = () => {
     };
 
     const findRoomForm = document.querySelector('.intro__findroom');
-    const checkinValue = document.querySelectorAll('.intro__findroom-section-label')[0];
-    const checkoutValue = document.querySelectorAll('.intro__findroom-section-label')[1];
 
-    findRoomForm.onsubmit = (e) => submitFindRoom(e, checkinValue, checkoutValue);
+    findRoomForm.onsubmit = (e) => submitFindRoom(e, checkInDateLabel, checkOutDateLabel);
 };
 
 export default IntroSection;

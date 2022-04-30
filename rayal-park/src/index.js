@@ -3,15 +3,17 @@ import './styles/styles.scss';
 import './styles/variables.scss';
 import './fonts/fonts.scss';
 // components
+import { Notification } from 'Sections/Notification/Notification';
 import HeaderSection from 'Sections/Header/Header';
 import IntroSection from 'Sections/Intro/Intro';
-import { Notification } from 'Sections/Notification/Notification';
+import VideoPresentationSection from 'Sections/VideoPresentation/VideoPresentation';
 
 const bodyContainer = document.body;
 const mainContainer = (container) => {
     let main = document.createElement('main');
-    IntroSection(main);
     Notification(main);
+    IntroSection(main);
+    VideoPresentationSection(main);
 
     return container.appendChild(main);
 };
