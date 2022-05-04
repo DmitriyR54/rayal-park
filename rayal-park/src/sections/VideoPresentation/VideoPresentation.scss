@@ -1,0 +1,159 @@
+@import '../../styles/variables.scss';
+
+.videoPresentation__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 200px;
+}
+/* VIDEOS SECTION */
+.videoPresentation__videos-wrapper {
+    width: 50%;
+    position: relative;
+}
+/* video item */
+.videoPresentation__video {
+    width: 90%;
+    box-shadow: 10px -10px 20px rgba(8, 31, 50, 0.15);
+    border-radius: 10px;
+    transform: scale(0.75);
+    transition: 0.5s ease-out;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.25);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    &-active {
+        box-shadow: none;
+        transform: scale(1);
+        cursor: default;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 4;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    video {
+        display: block;
+        max-width: 100%;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+    }
+}
+/* video play button */
+.videoPresentation__video-playButton {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+
+    &:hover {
+        opacity: 0.75;
+        animation: hoverPlayButton 0.4s linear;
+    }
+}
+
+/* TITLE SECTION */
+.videoPresentation__description {
+    width: 50%;
+    padding-left: 20px;
+    position: relative;
+    z-index: 2;
+}
+/* view more button */
+#videoPresentation__description-link {
+    margin-top: 30px;
+}
+
+/* ANIMATIONS */
+@keyframes hoverPlayButton {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* DEVICE ADAPTATION */
+@media (max-width: $smallScreen) {
+    .videoPresentation__inner {
+        flex-wrap: wrap-reverse;
+        padding-top: 50px;
+    }
+    .videoPresentation__videos-wrapper {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .videoPresentation__description {
+        width: 75%;
+        margin: 0 auto 100px;
+        padding: 50px 0 0;
+    }
+}
+/* tablet */
+@media (max-width: $tablet) {
+    .videoPresentation__videos-wrapper {
+        width: 100%;
+    }
+    .videoPresentation__description {
+        width: 100%;
+        padding-top: 25px;
+    }
+}
+/* mobile phone */
+@media (max-width: $phone) {
+    .videoPresentation__inner {
+        padding-top: 75px;
+    }
+    /* video item */
+    .videoPresentation__video {
+        margin-left: -25px;
+
+        &-active {
+            margin-left: 0;
+        }
+    }
+    .videoPresentation__video-playButton {
+        width: 50px;
+        height: 50px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    /* TITLE SECTION */
+    .videoPresentation__description {
+        padding-top: 0;
+        text-align: center;
+    }
+    #videoPresentation__description-link {
+        margin-top: 20px;
+    }
+}

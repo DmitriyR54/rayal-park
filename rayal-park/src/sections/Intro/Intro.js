@@ -7,7 +7,7 @@ const IntroSection = (container) => {
     container.innerHTML += introHtml;
 };
 
-window.onload = () => {
+window.addEventListener('load', () => {
     const formatDate = (date) => {
         const day = date.getDate();
         const month = date.toLocaleString('eng', { month: 'short' });
@@ -78,10 +78,9 @@ window.onload = () => {
             showNotification('Please, pick a date.');
         }
     };
-
     const findRoomForm = document.querySelector('.intro__findroom');
 
     findRoomForm.onsubmit = (e) => submitFindRoom(e, checkInDateLabel, checkOutDateLabel);
-};
+});
 
 export default IntroSection;
