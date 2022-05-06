@@ -16,7 +16,23 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+section {
+    padding-top: 140px;
+}
+
 img {
-    display: inline-block;
+    display: block;
     max-width: 100%;
+}
+
+@media (max-width: $smallScreen) {
+    section {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: $tablet) {
+    section {
+        padding-top: 75px;
+    }
 }

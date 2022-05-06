@@ -7,6 +7,8 @@ import { Notification } from 'Sections/Notification/Notification';
 import HeaderSection from 'Sections/Header/Header';
 import IntroSection from 'Sections/Intro/Intro';
 import VideoPresentationSection from 'Sections/VideoPresentation/VideoPresentation';
+import FeaturesSection from 'Sections/Features/Features';
+import GallerySection from 'Sections/Gallery/Gallery';
 
 const bodyContainer = document.body;
 const mainContainer = (container) => {
@@ -14,6 +16,8 @@ const mainContainer = (container) => {
     Notification(main);
     IntroSection(main);
     VideoPresentationSection(main);
+    FeaturesSection(main);
+    GallerySection(main);
 
     return container.appendChild(main);
 };
