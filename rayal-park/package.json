@@ -49,7 +49,8 @@
         "xml-loader": "^1.2.1"
     },
     "dependencies": {
-        "hamburgers": "^1.2.1",
-        "lodash": "^4.17.21"
+        "embla-carousel": "^6.2.0",
+        "embla-carousel-autoplay": "^6.2.0",
+        "hamburgers": "^1.2.1"
     }
 }

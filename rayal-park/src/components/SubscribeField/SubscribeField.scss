@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.subscribe__field {
+    display: flex;
+    justify-content: center;
+}
+.subscribe__field-input {
+    margin: 0 -10px 0 -10px;
+    border: 2px solid #e5e5e5;
+    border-radius: 5px;
+    padding-left: 30px;
+    font-size: 18px;
+    line-height: 150%;
+}
+.subscribe__field-submit {
+    &:hover,
+    &:focus {
+        background-color: $white;
+    }
+}
+
+@media (max-width: $phone) {
+    .subscribe__field .subscribe__field-input {
+        padding-left: 10px;
+        font-size: 16px;
+    }
+}

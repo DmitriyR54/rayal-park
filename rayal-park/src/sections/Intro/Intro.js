@@ -1,7 +1,7 @@
 import introHtml from './Intro.html';
 import './Intro.scss';
 
-import { showNotification } from '../Notification/Notification';
+import { showNotification } from '../../components/Notification/Notification';
 
 const IntroSection = (container) => {
     container.innerHTML += introHtml;
