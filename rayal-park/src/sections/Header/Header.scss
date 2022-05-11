@@ -90,7 +90,7 @@
     }
 }
 /* navigation burger button */
-#header__nav-btn {
+.header__nav-btn {
     display: none;
 
     .hamburger-inner {
@@ -101,6 +101,9 @@
             background-color: $blue;
         }
     }
+}
+.is-active {
+    display: none;
 }
 /* 'Book now' button */
 #header__button {
@@ -170,7 +173,7 @@
         visibility: hidden;
     }
     /* navigation burger button */
-    #header__nav-btn {
+    .header__nav-btn {
         display: block;
         order: 3;
         position: relative;
@@ -184,7 +187,7 @@
 }
 /* mobile phone */
 @media (max-width: $phone) {
-    .header{
+    .header {
         margin-top: 15px;
     }
     /* 'Book now' button */

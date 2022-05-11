@@ -4,10 +4,12 @@ import 'hamburgers/_sass/hamburgers/hamburgers.scss';
 
 const HeaderSection = (container) => {
     container.innerHTML += headerHtml;
+};
 
+window.addEventListener('load', () => {
     // show navigation
     const nav = document.querySelector('.header__nav');
-    const navBtn = document.querySelector('#header__nav-btn');
+    const navBtn = document.querySelector('.header__nav-btn');
 
     const showNav = (btn, nav) => {
         btn.classList.toggle('is-active');
@@ -18,6 +20,6 @@ const HeaderSection = (container) => {
     };
 
     navBtn.onclick = () => showNav(navBtn, nav);
-};
+});
 
 export default HeaderSection;

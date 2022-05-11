@@ -12,6 +12,7 @@ import FeaturesSection from 'Sections/Features/Features';
 import GallerySection from 'Sections/Gallery/Gallery';
 import TestimonialsSection from 'Sections/Testimonials/Testimonials';
 import SubscribeSection from 'Sections/Subscribe/Subscribe';
+import FooterSection from 'Sections/Footer/Footer';
 
 const bodyContainer = document.body;
 const mainContainer = (container) => {
@@ -33,3 +34,4 @@ const mainContainer = (container) => {
 
 HeaderSection(bodyContainer);
 mainContainer(bodyContainer);
+FooterSection(bodyContainer);
