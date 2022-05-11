@@ -70,6 +70,7 @@ window.addEventListener('load', () => {
             videoItem.addEventListener('MSFullscreenChange', exitHandler, false);
             videoItem.addEventListener('webkitfullscreenchange', exitHandler, false);
         }
+
         function exitHandler() {
             if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 videoItem.pause();

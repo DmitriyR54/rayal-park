@@ -8,6 +8,19 @@
     left: 0;
     right: 0;
     z-index: 10;
+
+    &-fixed {
+        margin-top: 0;
+        padding: 5px 0;
+        background-color: rgba(235, 235, 235, 0.75);
+        position: fixed;
+    }
+
+    @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+        &-fixed {
+            backdrop-filter: blur(70px);
+        }
+    }
 }
 .header__inner {
     display: flex;
@@ -136,7 +149,7 @@
 @media (max-width: $tablet) {
     /* NAVIGATION */
     .header__nav {
-        height: 100%;
+        height: 100vh;
         margin: 0;
         background-color: rgba(8, 31, 50, 0.9);
         opacity: 0;
@@ -197,6 +210,10 @@
 @media (max-width: $phone) {
     .header {
         margin-top: 15px;
+
+        &-fixed {
+            margin-top: 0;
+        }
     }
     /* 'Book now' button */
     #header__button {

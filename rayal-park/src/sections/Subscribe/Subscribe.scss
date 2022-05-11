@@ -13,11 +13,15 @@
         width: 415px;
     }
 }
+
+/* DEVICE ADAPTATION */
+/* tablet */
 @media (max-width: $tablet) {
     .subscribe__inner .subscribe__field .subscribe__field-input {
         width: 300px;
     }
 }
+/* mobile phone */
 @media (max-width: $phone) {
     .subscribe__title {
         margin-top: 10px;

@@ -11,6 +11,7 @@
     color: $gray;
     font-family: 'Poppins', 'Roboto', sans-serif;
 
+    /* stylization of the 'subscribe' component ONLY inside of the footer */
     .subscribe__field {
         margin-top: 30px;
         padding-top: 0;
@@ -26,8 +27,9 @@
         }
     }
 }
+
+/* FOOTER COLUMN */
 .footer__section {
-    // border: 1px solid #000;
     padding-top: 15px;
 
     &:first-child {
@@ -43,6 +45,7 @@
     }
 }
 
+/* COMPANY LOGO BLOCK */
 .footer__logo {
     display: inline-block;
     color: inherit;
@@ -56,6 +59,7 @@
     }
 }
 
+/* developer email link */
 .footer__mailLink {
     display: block;
     width: fit-content;
@@ -64,8 +68,14 @@
     font-size: 16px;
     line-height: 160%;
     letter-spacing: 2px;
+    transition: $transition;
+
+    &:hover {
+        color: $light-blue;
+    }
 }
 
+/* developer social links */
 .footer__socialLink {
     display: inline-block;
     margin: 15px 25px 0 0;
@@ -100,6 +110,7 @@
     }
 }
 
+/* TITLE OF THE BLOCKS WITH 3 LINKS */
 .footer__section-title {
     color: $black;
     font-size: 20px;
@@ -116,12 +127,18 @@
     color: inherit;
     font-size: 16px;
     line-height: 150%;
+    transition: $transition;
 
     &:last-child {
         margin-bottom: 0;
     }
+
+    &:hover {
+        color: $light-blue;
+    }
 }
 
+/* DEVICE ADAPTATION */
 @media (max-width: $smallScreen) {
     .footer__inner {
         flex-wrap: wrap;
@@ -133,7 +150,7 @@
         order: -1;
     }
 }
-
+/* mobile phone */
 @media (max-width: $phone) {
     .footer {
         margin-top: 50px;
@@ -158,7 +175,7 @@
             display: none;
         }
     }
-    .footer__section-link{
+    .footer__section-link {
         align-self: center;
     }
     .footer__logo img {

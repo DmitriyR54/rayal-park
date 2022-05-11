@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
     const options = { loop: false, align: 0 };
     const plugins = [Autoplay()];
 
+    //carousel initialization
     const embla = EmblaCarousel(emblaNode, options, plugins);
 });
 

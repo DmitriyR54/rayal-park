@@ -2,9 +2,7 @@
 import './styles/styles.scss';
 import './styles/variables.scss';
 import './fonts/fonts.scss';
-// components
-import { Notification } from './components/Notification/Notification';
-import SubscribeField from './components/SubscribeField/SubscribeField';
+// sections
 import HeaderSection from 'Sections/Header/Header';
 import IntroSection from 'Sections/Intro/Intro';
 import VideoPresentationSection from 'Sections/VideoPresentation/VideoPresentation';
@@ -13,6 +11,9 @@ import GallerySection from 'Sections/Gallery/Gallery';
 import TestimonialsSection from 'Sections/Testimonials/Testimonials';
 import SubscribeSection from 'Sections/Subscribe/Subscribe';
 import FooterSection from 'Sections/Footer/Footer';
+// reusable components
+import { Notification } from './components/Notification/Notification';
+import SubscribeField from './components/SubscribeField/SubscribeField';
 
 const bodyContainer = document.body;
 const mainContainer = (container) => {

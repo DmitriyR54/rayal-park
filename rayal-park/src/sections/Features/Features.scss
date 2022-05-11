@@ -3,15 +3,16 @@
 .features__inner {
     text-align: center;
 }
+/* TITLE */
 .features__subtitle {
     max-width: 70%;
     margin: 25px auto 0;
 }
+
 .features__wrapper {
     display: flex;
     gap: 30px;
     margin-top: 60px;
-    // border: 1px solid #000;
 }
 .features__item {
     display: flex;
@@ -23,7 +24,6 @@
 }
 .features__item-descr {
     min-height: 60%;
-    // border: 1px solid #000;
 }
 .features__item-img {
     height: 75px;
@@ -40,6 +40,7 @@
     margin-top: 15px;
 }
 
+/* DEVICE ADAPTATION */
 @media (max-width: $smallScreen) {
     .features__wrapper {
         gap: 20px;
@@ -48,7 +49,7 @@
         padding: 15px 10px 10px;
     }
 }
-
+/* tablet */
 @media (max-width: $tablet) {
     .features__subtitle {
         margin-top: 15px;
@@ -60,6 +61,7 @@
         width: calc(50% - 10px);
     }
 }
+/* mobile phone */
 @media (max-width: $phone) {
     .features__subtitle {
         max-width: 90%;

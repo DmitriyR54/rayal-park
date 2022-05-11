@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     gap: 30px;
 }
+/* TITLE BLOCK */
 .gallery__descr {
     display: flex;
     flex-direction: column;
@@ -22,9 +23,10 @@
         margin-top: 30px;
     }
 }
+
+/* GALLERY */
 .gallery__item {
     display: flex;
-    // border: 1px solid #000;
     width: calc(50% - 15px);
     position: relative;
 }
@@ -47,12 +49,6 @@
     left: 0;
     z-index: 2;
 }
-/* if backdrop-filter is supported background will be blurred */
-@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    .gallery__item-descr {
-        backdrop-filter: blur(70px);
-    }
-}
 .gallery__item-descr-wrapper {
     margin-bottom: 10px;
 }
@@ -68,6 +64,7 @@
     font-weight: 500;
     line-height: 160%;
 
+    /* 'night' option */
     span {
         font-size: 12px;
         font-weight: 400;
@@ -77,6 +74,8 @@
     font-family: 'Gelasio', 'Times New Roman', serif;
 }
 
+/* DEVICE ADAPTATION */
+/* tablet */
 @media (max-width: $tablet) {
     .gallery__descr {
         width: 100%;
@@ -95,7 +94,7 @@
         padding: 15px;
     }
 }
-
+/* mobile phone */
 @media (max-width: $phone) {
     .gallery__inner {
         gap: 15px;
@@ -131,5 +130,12 @@
     .gallery__item-roomname {
         display: block;
         margin: 0 5px 5px 0;
+    }
+}
+
+/* if backdrop-filter is supported background will be blurred */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .gallery__item-descr {
+        backdrop-filter: blur(70px);
     }
 }
