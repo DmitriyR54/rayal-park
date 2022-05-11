@@ -91,7 +91,7 @@
 }
 /* navigation burger button */
 .header__nav-btn {
-    display: none;
+    display: none !important;
 
     .hamburger-inner {
         background-color: $blue;
@@ -101,9 +101,17 @@
             background-color: $blue;
         }
     }
-}
-.is-active {
-    display: none;
+
+    &.is-active {
+        .hamburger-inner {
+            background-color: $light-blue !important;
+
+            &::before,
+            &::after {
+                background-color: $light-blue !important;
+            }
+        }
+    }
 }
 /* 'Book now' button */
 #header__button {
@@ -174,7 +182,7 @@
     }
     /* navigation burger button */
     .header__nav-btn {
-        display: block;
+        display: block !important;
         order: 3;
         position: relative;
         z-index: 100;
