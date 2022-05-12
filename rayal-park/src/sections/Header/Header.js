@@ -11,12 +11,17 @@ window.addEventListener('load', () => {
     // set fixed header on top of the screen
     const header = document.querySelector('.header');
 
-    window.addEventListener('scroll', () => {
+    const toggleFixedHeader = () => {
         if (window.pageYOffset >= 300) {
             header.classList.add('header-fixed');
         } else {
             header.classList.remove('header-fixed');
         }
+    };
+    toggleFixedHeader();
+
+    window.addEventListener('scroll', () => {
+        toggleFixedHeader();
     });
 
     // show navigation when user clicks menu button
