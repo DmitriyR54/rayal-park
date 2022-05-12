@@ -1,3 +1,5 @@
+// application scripts
+import 'core-js/actual';
 // styles
 import './styles/styles.scss';
 import './styles/variables.scss';

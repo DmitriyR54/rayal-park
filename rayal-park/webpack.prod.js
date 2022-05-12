@@ -83,11 +83,8 @@ module.exports = merge(common, {
         }),
         new FontminPlugin({
             autodetect: true,
-            glyphs: ['\uf0c8'],
             allowedFilesRegex: null,
             skippedFilesRegex: null,
-            textRegex: /\.(js|css|html)$/,
-            webpackCompilationHook: 'thisCompilation',
         }),
     ],
 });

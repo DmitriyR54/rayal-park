@@ -26,10 +26,17 @@ module.exports = {
                 },
             },
             {
+                test: /\.mp4$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'videos/[hash][ext][query]',
+                },
+            },
+            {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'fonts/[hash][ext][query]',
+                    filename: 'fonts/[name][ext]',
                 },
             },
             {
