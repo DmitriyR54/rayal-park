@@ -4,6 +4,8 @@ import 'core-js/actual';
 import './styles/styles.scss';
 import './styles/variables.scss';
 import './fonts/fonts.scss';
+// animation while page loads
+import Preloader from './components/Preloader/Preloader';
 // sections
 import HeaderSection from 'Sections/Header/Header';
 import IntroSection from 'Sections/Intro/Intro';
@@ -21,6 +23,8 @@ const bodyContainer = document.body;
 const mainContainer = (container) => {
     // root container
     let main = document.createElement('main');
+    // animation while page loads
+    Preloader(main);
     // sections
     IntroSection(main);
     VideoPresentationSection(main);
